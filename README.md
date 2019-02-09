@@ -1,6 +1,8 @@
 # python-ci-template
 minimal template for Python Travis-CI. Prereqs installed from requirements.txt
 
+I copy two class template from my teammate https://github.com/mmark9/ec500_spring19_misc/blob/develop/heart_monitor/common_types.py
+
 
 Before sending the email, please set your google account appropriately
 
