@@ -1,3 +1,11 @@
+Environment: 
+Python 3.6
+Twilio
+Flask
+
+
+Requirement for sending google mail:
+
 Before sending the email, please set your google account appropriately
 
 https://support.google.com/mail/answer/7126229?visit_id=636850886287440267-775077852&hl=en&rd=1
