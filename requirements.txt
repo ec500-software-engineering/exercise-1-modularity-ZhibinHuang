@@ -1,3 +1,4 @@
-smtplib
-email.mime.text
-
+setuptools==39.0.1
+Flask==1.0.2
+database==0.6.0
+twilio==6.24.0
