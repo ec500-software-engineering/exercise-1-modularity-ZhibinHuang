@@ -4,6 +4,9 @@
 
 import smtplib
 import email.mime.text
+import threading
+import time
+import random
 
 # before sending the email, please set your google account appropriately
 # https://support.google.com/mail/answer/7126229?visit_id=636850886287440267-775077852&hl=en&rd=1
@@ -39,8 +42,13 @@ class Contact(object):
 
 # function to send google email via SMTP #
 def Send_Email(name,content,destination):
+
+    # this act as the data comes at random time #
+    ti = random.randint(1,100)
+    time.sleep(ti)
+
     mail_username = 'hzhibin@bu.edu' # your email %%%%%%%%%%%%%%%%%%%%
-    mail_password = '*********' # email password  %%%%%%%%%%%%%%%%%%%%
+    mail_password = '********' # email password  %%%%%%%%%%%%%%%%%%%%
     from_addr = mail_username
     to_addrs = destination
 
@@ -53,7 +61,7 @@ def Send_Email(name,content,destination):
     print('connecting ...')
 
     # show the debug log
-    smtp.set_debuglevel(1)
+    smtp.set_debuglevel(0)
 
     # connect
     try:
@@ -82,3 +90,7 @@ if __name__ == '__main__':
     mes = Message('There is an Emergency, please contact the hospital!',1)
     con = Contact('Kevin','6173318***','hzhibin@bu.edu') # change it to the email you want to sent %%%%%%%%%%%%%%%%%%
     Send_Email(con.get_name(),mes.get_msg_content(),con.get_email())
+    # create 5 threads, each work on therir on #
+    for i in range(5):
+        t = threading.Thread(target=Send_Email(con.get_name(),mes.get_msg_content(),con.get_email()))
+        t.start()
