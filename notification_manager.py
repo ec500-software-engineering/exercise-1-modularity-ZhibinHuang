@@ -1,7 +1,5 @@
-# https://github.com/mmark9/ec500_spring19_misc/blob/develop/heart_monitor/notification_manager.py #
-
 from common_types import MessageUrgency
-import settings
+
 
 class NotificationManager(object):
     """
